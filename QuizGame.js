@@ -36,11 +36,11 @@ let QuizGame = (function () {
           log('%c Wrong answer!', 'font-weight: bold; color: red;')
         }
 
-        return function (score) {
+        return (function (score) {
           log(`%c Current score: ${score}`, 'font-weight: bold; color: blue;')
           log('-'.repeat(40));
           this._printQuestion()
-        }.call(this, score)
+        }).call(this, score)
       }
       log('%c BYE!', 'font-weight: bold; color: blue;')
       promptAnswer = 0
